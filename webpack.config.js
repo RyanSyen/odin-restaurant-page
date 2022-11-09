@@ -1,35 +1,59 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.js',
+    devtool: 'source-map',
+    // webpack dev server
+    devServer: {
+        static: './dist',
+        historyApiFallback: {
+            index: 'index.html'
+        }
+    },
+    plugins: [
+        // HtmlWebpackPlugin
+        new HtmlWebpackPlugin({
+            title: 'Output Management',
+        }),
+    ],
     output: {
-        filename: 'main.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
     module: {
-        // loaders: [
-        //     {
-        //         test: /\.(scss|sass)$/i,
-        //         include: [
-        //             path.resolve(__dirname, 'node_modules'),
-        //             path.resolve(__dirname, 'path/to/imported/file/dir'),
-        //         ],
-        //         loaders: ["css", "sass"]
-        //     },
-        // ],
         rules: [
             {
                 test: /\.s[ac]ss$/i,
                 use: [
                     // Creates `style` nodes from JS strings
                     "style-loader",
-                    // Translates CSS into CommonJS
-                    "css-loader",
-                    // Compiles Sass to CSS
-                    "sass-loader",
+                    {
+                        // Translates CSS into CommonJS
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        // Compiles Sass to CSS
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
                 ],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
             },
         ],
     },
-
+    // webpack dev server
+    optimization: {
+        runtimeChunk: 'single',
+    },
 };

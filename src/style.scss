@@ -1,5 +1,5 @@
-// @import 'https://fonts.googleapis.com/css?family=Alex+Brush|Overpass+Mono:600,700';
-// @import 'https://fonts.googleapis.com/css?family=PT+Sans';
+@import 'https://fonts.googleapis.com/css?family=Alex+Brush|Overpass+Mono:600,700';
+@import 'https://fonts.googleapis.com/css?family=PT+Sans';
 
 $OverpassMonoFont: 'Overpass Mono', monospace;
 $PTSansFont: 'PT Sans', sans-serif;
@@ -12,6 +12,7 @@ $lightgray: rgb(35,35,35);
 
 body {
   overflow-x: hidden;
+  margin: 0;
 }
 /*
   GLOBAL
@@ -38,8 +39,7 @@ ul {
 */
 header {
   min-height:100vh;
-  background:linear-gradient(to bottom,rgba($black,.8),transparent),
-    url('http://zigis.com.au/wp-content/uploads/2014/05/holiday2013_front.jpg')no-repeat center center;
+  background:linear-gradient(to bottom,rgba($black,.4),transparent), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')no-repeat center center;
   background-size:cover;
   background-attachment: fixed;
   display:flex;
@@ -244,7 +244,7 @@ nav div.show {
   TASTEFUL RECIPES SECTION
 */
 .bread-background {
-  background:$black url('http://www.performerprosites.com/development/clients/showpalace/wp-content/uploads/2014/05/tasteful-recipies-dinner-theatre.jpg')no-repeat center center;
+  background:$black url('https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80')no-repeat center center;
   background-size:cover;
   background-attachment: fixed;
   height:500px;
@@ -267,7 +267,8 @@ nav div.show {
   THE PERFECT BLEND SECTION
 */
 .cake-background {
-  background:black url('http://www.rustiquerichmond.co.uk/wp-content/uploads/2014/06/desert.jpg')no-repeat center center;
+//   background:black;
+background:$black url('https://images.unsplash.com/photo-1619557511809-c851644e0134?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80')no-repeat center center;
   background-size:cover;
   background-attachment: fixed;
   height:500px;
