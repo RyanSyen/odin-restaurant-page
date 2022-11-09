@@ -37,10 +37,10 @@ const generateHome = (() => {
             nav_div_ul_li_a.innerText = el;
             nav_div_ul_li_a.setAttribute('id', el);
             nav_div_ul_li_a.style.cursor = 'pointer';
-            nav_div_ul_li_a.onmouseleave = (e) => {
-                nav_div_ul_li_a.style.pointer = 'cursor';
-                console.log(e)
-            }
+            // nav_div_ul_li_a.onmouseleave = (e) => {
+            //     nav_div_ul_li_a.style.pointer = 'cursor';
+            //     console.log(e)
+            // }
             if (navBar[0] === el) nav_div_ul_li_a.classList.add('active');
             nav_div_ul_li.appendChild(nav_div_ul_li_a);
             nav_div_ul.appendChild(nav_div_ul_li);
